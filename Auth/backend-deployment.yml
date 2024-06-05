@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: episode-01-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend1
+  template:
+    metadata:
+      labels:
+        app: backend1
+    spec:
+      containers:
+      - name: backend
+        image: samiirshad1103343/episode-01-backend:latest
+        env:
+        - name: MONGO_DB_SECRET
+          value: "mongodb+srv://webeng12345:Web12345*@cluster0.bvujju5.mongodb.net/?retryWrites=true&w=majority"
+      nodeSelector:
+        kubernetes.io/hostname: kind-worker

@@ -19,7 +19,17 @@ pipeline {
         }
         stage('21i-1103 Push') {
             steps {
-                bat 'docker push scd-final-lab-exam-31304-master:latest'
+                bat 'docker tag scd-final-lab-exam-31304-master-21i-1103_backend4:latest samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend4:latest'
+                bat 'docker push samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend4:latest'
+                 bat 'docker tag scd-final-lab-exam-31304-master-21i-1103_backend3:latest samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend3:latest'
+                bat 'docker push samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend3:latest'
+                
+                 bat 'docker tag scd-final-lab-exam-31304-master-21i-1103_backend2:latest samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend2:latest'
+                bat 'docker push samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend2:latest'
+                
+                 bat 'docker tag scd-final-lab-exam-31304-master-21i-1103_backend1:latest samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend1:latest'
+                bat 'docker push samiirshad1103343/scd-final-lab-exam-31304-master-21i-1103_backend1:latest'
+                
             
             }
         }
