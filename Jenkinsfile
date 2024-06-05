@@ -19,8 +19,8 @@ pipeline {
         }
         stage('21i-1103 Push') {
             steps {
-                //add docker file on docker registery
-                bat 'docker push samiirshad1103343/scd-final-lab-exam-31304-master-db-1:latest'
+                bat 'docker push scd-final-lab-exam-31304-master:latest'
+            
             }
         }
     }
