@@ -20,7 +20,7 @@ pipeline {
         stage('21i-1103 Push') {
             steps {
                 //add docker file on docker registery
-                bat 'docker push samiirshad1103343/FinalLabExam:latest'
+                bat 'docker push samiirshad1103343/final_lab_exam:latest'
             }
         }
     }
