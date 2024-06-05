@@ -14,7 +14,7 @@ pipeline {
         }
         stage('21i-1103 Build') {
             steps {
-                bat 'docker-compose -f path/to/DockerCompose.yml up --build -d FinalLabExam'
+                bat 'docker-compose -f /DockerCompose.yml up --build -d FinalLabExam'
             }
         }
         stage('21i-1103 Push') {
