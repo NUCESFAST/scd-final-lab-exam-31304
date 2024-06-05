@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  21i-1103_frontend:
+    depends_on:
+      - 21i-1103_backend1
+      - 21i-1103_backend2
+      - 21i-1103_backend3
+      - 21i-1103_backend4
+    build: ./client
+    ports:
+      - 3103:80
+  21i-1103_backend1:
+    depends_on:
+      - db
+    build: ./Auth
+    ports:
+      - 4000:11103
+  21i-1103_backend2:
+    depends_on:
+      - db
+    build: ./Classrooms
+    ports:
+      - 4001:21103
+  21i-1103_backend3:
+    depends_on:
+      - db
+    build: ./event-bus
+    ports:
+      - 4009:41103
+  21i-1103_backend4:
+    depends_on:
+      - db
+    build: ./post
+    ports:
+      - 4002:31103
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27010
+    volumes:
+      - A03:/data/db
+
+volumes:
+  A03:
