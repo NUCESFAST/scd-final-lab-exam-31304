@@ -14,12 +14,12 @@ pipeline {
         }
         stage('21i-1103 Build') {
             steps {
-                bat 'docker-compose -f DockerCompose.yml up --build -d'
+                bat 'docker-compose -f path/to/DockerCompose.yml up --build -d FinalLabExam'
             }
         }
-        stage('21i-1103  Push') {
+        stage('21i-1103 Push') {
             steps {
-                bat 'docker push frontend'
+                bat 'docker push samiirshad1103343/FinalLabExam:latest'
             }
         }
     }
